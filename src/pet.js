@@ -25,6 +25,12 @@ function Pet (name) {
             this.fitness = max_fitness
         }
     };
-    
+    Pet.prototype.feed = function (){
+        if((this.hunger + 3) <= empty_belly){
+            this.hunger += 3
+        } else {
+            this.hunger = empty_belly;
+        }
+    }  
 
 module.exports = Pet

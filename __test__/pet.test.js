@@ -39,3 +39,12 @@ describe('constructor', () => {
         expect(pet.fitness).toEqual(10)
       })
     })
+
+    describe('feed', () => {
+      it('it prevents hunger level from going below 0', () => {
+        const pet = new Pet ('Fido')
+        pet.hunger = 8
+        pet.feed()
+        expect(pet.hunger).toEqual(0)
+      })
+    })
