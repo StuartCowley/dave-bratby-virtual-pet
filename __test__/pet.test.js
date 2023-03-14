@@ -75,3 +75,12 @@ describe('constructor', () => {
         expect('I feel great!')
       })
     })
+    
+    describe('is pet alive?', () => {
+      it('returns false if age is 30 or more', () => {
+        const pet = new Pet('Bob')
+        pet.age = 30 
+        pet.isAlive
+        expect(pet.isAlive).toEqual(false)
+      })
+    })
