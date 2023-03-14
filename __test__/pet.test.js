@@ -76,11 +76,20 @@ describe('constructor', () => {
       })
     })
     
-    describe('is pet alive?', () => {
+    describe('isAlive ', () => {
       it('returns false if age is 30 or more', () => {
         const pet = new Pet('Bob')
-        pet.age = 30 
-        pet.isAlive
+        pet.age = 30
+        expect(pet.isAlive).toEqual(false)
+      })
+      it('returns false if hunger is 10 or more ', () => {
+        const pet = new Pet ('Bob')
+        pet.hunger = 10
+        expect(pet.isAlive).toEqual(false)
+      })
+      it('returns false if fitness is 0 or less', () => {
+        const pet = new Pet ('Bob')
+        pet.fitness = 0
         expect(pet.isAlive).toEqual(false)
       })
     })
