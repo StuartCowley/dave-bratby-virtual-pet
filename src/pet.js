@@ -7,6 +7,7 @@ function Pet (name) {
     this.age = 0;
     this.hunger = empty_belly;
     this.fitness = max_fitness;
+    this.child = [];
     };
 
     Pet.prototype = {
@@ -62,6 +63,11 @@ function Pet (name) {
         } else {
             return 'I feel great!'
         }
+    }
+
+    Pet.prototype.haveBaby = function (name){
+        const child = new Pet(name)
+        this.child.push(child)
     }
 
 module.exports = Pet

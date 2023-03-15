@@ -122,3 +122,11 @@ describe('constructor', () => {
         expect(pet.isAlive).toEqual(false)
       })
     })
+
+    describe('have a baby ', ()=> {
+      it('returns the child array with a name in it ', () => {
+        const pet = new Pet('Bob')
+        pet.haveBaby('Coby')
+        expect(pet.child[0].name).toEqual("Coby")
+      })
+    } )
