@@ -14,8 +14,11 @@ function Pet (name) {
             return this.age < 30 && this.hunger < 10 && this.fitness > 0
         }
     };
-
+    
     Pet.prototype.growUp = function (){
+        if (!this.isAlive){
+            throw new Error('Your pet is no longer alive')
+        }
         this.age += grow_old;
     };
     Pet.prototype.getHungry = function (){ 
@@ -25,6 +28,9 @@ function Pet (name) {
         this.fitness -= 3;
     };
     Pet.prototype.walk =  function (){
+        if (!this.isAlive){
+            throw new Error('Your pet is no longer alive')
+        }
         if((this.fitness + 4) <= max_fitness){
             this.fitness += 4
         } else {
@@ -32,6 +38,9 @@ function Pet (name) {
         }
     };
     Pet.prototype.feed = function (){
+        if (!this.isAlive){
+            throw new Error('Your pet is no longer alive')
+        }
         if((this.hunger + 3) <= empty_belly){
             this.hunger += 3
         } else {
@@ -39,11 +48,16 @@ function Pet (name) {
         }
     }  
     Pet.prototype.checkUp = function (){
+        if (!this.isAlive){
+            throw new Error('Your pet is no longer alive')
+        }
         if ((this.fitness <= 3)){
             return 'I need a walk!'
-        } else if((this.hunger >= 5)){
+        } 
+        if((this.hunger >= 5)){
             return 'I am hungry!'
-        } else if((this.fitness <= 3 && this.hunger >= 5)) {
+        }
+        if((this.fitness <= 3 && this.hunger >= 5)) {
             return 'I am hungry and I need a walk!'
         } else {
             return 'I feel great!'
