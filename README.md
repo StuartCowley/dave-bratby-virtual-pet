@@ -16,6 +16,6 @@ Firstly we had to set up our testing envrioment. Lets start with the basics
 * Create a README.md in your virtual-pet directory and update it as you go
 * Create a pet.js file and a pet.test.js file in your directory
 * The last bit is to make sure when we push our code to GitHub, we're not pushing our node modules as well. The is because the node modules have a very large amount of files and whenever we push changes it would also push all of this as well. To stop this, we need to create a **.gitignore** file.
-* Create the file like any other, touch .gitignore (not the . at the beginning of the name) and open the file and add the line of text **node_modules/** to it. If you run git status you'll now see that your node.modules are no longer appearing in the staging area. 
+* Create the file like any other, touch .gitignore (note the . at the beginning of the name) and open the file and add the line of text **node_modules/** to it. If you run git status you'll now see that your node.modules are no longer appearing in the staging area. 
 * Quick Note! If you can't see your .gitignore file in your directory, then it'll be hidden. To check, run **ls -a** in the CLI and it'll reveal it. You can open it with **open .gitignore** and edit it through there. 
 * So, with all this done you can now push your changes to github and begin the project!
